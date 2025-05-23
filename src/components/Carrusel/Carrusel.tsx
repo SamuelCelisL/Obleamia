@@ -19,7 +19,7 @@ function CarruselContent() {
   } = useInterval();
 
   return (
-    <div className="relative h-auto w-auto max-w-[1000px] aspect-[16/9] flex items-center justify-center overflow-hidden">
+    <div className="relative h-auto w-auto max-w-[800px] aspect-[16/9] flex items-center justify-center overflow-hidden">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="animate-spin rounded-full h-10 w-10 border-4 border-black border-t-transparent"></span>
