@@ -33,7 +33,7 @@ function CarruselContent() {
           exit={{ x: -50, opacity: 0 }}
           transition={{ duration: 0.5 }}
           onLoad={() => setLoading(false)}
-          className="h-full object-cover rounded-4xl"
+          className="h-full object-cover"
           src={carruselImg[count]} width="2000" height="10" alt={`Carrusel ${count}`} />
       </AnimatePresence>
       <div className="absolute inset-0">
