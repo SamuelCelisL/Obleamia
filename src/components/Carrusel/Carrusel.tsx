@@ -19,7 +19,7 @@ function CarruselContent() {
   } = useInterval();
 
   return (
-    <div className="relative h-auto w-auto max-w-[800px] aspect-[16/9] flex items-center justify-center overflow-hidden">
+    <div className="relative h-[800px] w-auto max-w-[800px] aspect-[3/4] flex items-center justify-center overflow-hidden rounded-4xl">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="animate-spin rounded-full h-10 w-10 border-4 border-black border-t-transparent"></span>
@@ -33,7 +33,7 @@ function CarruselContent() {
           exit={{ x: -50, opacity: 0 }}
           transition={{ duration: 0.5 }}
           onLoad={() => setLoading(false)}
-          className="h-full"
+          className="h-full object-cover rounded-4xl"
           src={carruselImg[count]} width="2000" height="10" alt={`Carrusel ${count}`} />
       </AnimatePresence>
       <div className="absolute inset-0">
