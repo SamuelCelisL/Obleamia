@@ -1,4 +1,4 @@
-import { redes } from "../lib/redes";
+import { redes } from "../../lib/redes";
 
 function Social() {
 
@@ -6,7 +6,7 @@ function Social() {
     <section id="contacts" className="bg-[#fbe3bf] flex flex-col items-center text-center py-10">
       {/* <div className="espacio-con"></div> */}
       <div className="contenido">
-        <p className="text-2xl">Desarrollador apasionado con un fuerte compromiso con la adquisición de conocimientos.</p>
+        <p className="text-2xl">No olvides seguirnos en nuestras redes para enterarte de lo ultimo en información.</p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 flex-wrap py-10">
           {
             redes.map(red => {
