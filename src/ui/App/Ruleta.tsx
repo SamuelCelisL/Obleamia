@@ -1,10 +1,25 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
+const codigo = ["1234-1", "1234-2", "1234-3", "1234-4","5678-5", "5678-6", "5678-7", "5678-8", "9012-9", "9012-10","9012-11","9012-12","3456-13","3456-14","3456-15"];
+
 
 const CustomWheel = () => {
+  const navigate = useNavigate();
+  const params = useParams();
+  const { id } = params;
+
+
   const [isSpinning, setIsSpinning] = useState(false);
   const [result, setResult] = useState('');
   const [rotation, setRotation] = useState(0);
   const wheelRef = useRef(null);
+
+  useEffect(() => {
+
+    if (!id || !codigo.includes(id)) navigate('/');
+
+  }, [id, navigate]);
 
   // Configuración fija de elementos con diferentes pesos
   const wheelItems = [
@@ -181,6 +196,13 @@ const CustomWheel = () => {
         <p className="text-lg text-gray-700 max-w-2xl text-center px-4">
           Recuerda que el premio solo sera valido si la ruleta es girada en frente de los creadores de Obleamia!!
         </p>
+                {/* Código de canje */}
+        <div className="bg-purple-600 backdrop-blur-sm rounded-2xl p-6 mb-8 mt-4 border-2 border-dashed border-yellow-400">
+          <p className="text-yellow-400 font-semibold mb-2">📋 CÓDIGO DE CANJE</p>
+          <p className="text-3xl font-mono font-bold text-white tracking-wider text-center">
+            {id}
+          </p>
+        </div>
 
         {/* Resultado */}
         {result && (
@@ -202,3 +224,5 @@ const CustomWheel = () => {
 };
 
 export default CustomWheel;
+
+
